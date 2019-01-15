@@ -50,7 +50,7 @@ function simpleEgg() {
     var egg1 = document.getElementById('egg1');
     var eggImg = document.createElement('img');
     var left1 = Math.floor(Math.random() * (window.screen.width - 60));
-    eggImg.setAttribute('src', 'egg.png');
+    eggImg.setAttribute('src', 'egg2.png');
     eggImg.style.height = '45px';
     eggImg.style.width = '35px';
     eggImg.setAttribute('class', 'egg');
@@ -98,7 +98,7 @@ function redEgg() {
         redEgg.style.top = top++ + 'px';
         redEgg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
-            var eggLeft = Number(redEgg.style.left.replace('px', '')) + 20;
+            var eggLeft = Number(redEgg.style.left.replace('px', ''));
             if (redEgg.style.left > basket.style.left && eggLeft < (left + 150)) {
                 score = score + 50;
                 scoreDiv.innerHTML = "Score: " + score;
@@ -130,7 +130,7 @@ function goldenEgg() {
         goldenEgg.style.top = top++ + 'px';
         goldenEgg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
-            var eggLeft = Number(goldenEgg.style.left.replace('px', '')) + 20;
+            var eggLeft = Number(goldenEgg.style.left.replace('px', ''));
             if (goldenEgg.style.left > basket.style.left && eggLeft < (left + 150 )) {
                 score = score + 20;
                 scoreDiv.innerHTML = "Score: " + score;
