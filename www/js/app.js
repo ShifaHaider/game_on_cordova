@@ -61,7 +61,6 @@ function simpleEgg() {
         eggImg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
             var eggLeft = Number(eggImg.style.left.replace('px', '')) ;
-            console.log(eggLeft , (eggLeft + 16));
             if (eggImg.style.left > basket.style.left && eggLeft < (left + 150 )) {
                 score = score + 10;
                 scoreDiv.innerHTML = "Score: " + score;
