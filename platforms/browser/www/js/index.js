@@ -12,6 +12,7 @@ function onDeviceReady() {
     //console.log(navigator.notification);
     //navigator.notification.prompt('Please enter your name');
     //navigator.notification.beep(2);
+    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
 function onSuccess(acceleration) {
 
@@ -25,6 +26,5 @@ function onError() {
     alert('onError!');
 }
 
-var options = { frequency: 1000 };  // Update every 3 seconds
 
-var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+var options = { frequency: 1000 };  // Update every 3 seconds

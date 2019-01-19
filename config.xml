@@ -25,6 +25,6 @@
     </platform>
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <preference name="Orientation" value="landscape" />
-    <engine name="browser" spec="^5.0.4" />
     <plugin name="cordova-plugin-device-motion" spec="^2.0.1" />
+    <engine name="browser" spec="^5.0.4" />
 </widget>
