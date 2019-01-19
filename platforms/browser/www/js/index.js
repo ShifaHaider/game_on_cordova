@@ -2,10 +2,14 @@
 var app = {
 
 };
-//document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-    console.log(navigator.notification);
-    navigator.notification.prompt('Please enter your name');
-    navigator.notification.beep(2);
+    window.addEventListener("orientationchange", function(e){
+        console.log(e);
+        console.log(screen.orientation.type);
+    });
+    //console.log(navigator.notification);
+    //navigator.notification.prompt('Please enter your name');
+    //navigator.notification.beep(2);
 
 }
