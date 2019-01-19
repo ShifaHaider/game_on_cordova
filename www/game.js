@@ -57,6 +57,7 @@ function simpleEgg() {
     egg1.appendChild(eggImg);
     var top = 0;
     var a = setInterval(function () {
+        //console.log(eggImg.style.left);
         eggImg.style.top = top++ + 'px';
         eggImg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
@@ -73,10 +74,10 @@ function simpleEgg() {
             egg1.removeChild(eggImg);
             wastEggs++;
             wasteEgg.innerHTML = 'WasteEggs: ' + wastEggs;
-            if (wastEggs === 10) {
-                alert('Game over!!');
-                window.location.reload();
-            }
+            //if (wastEggs === 10) {
+            //    alert('Game over!!');
+            //    window.location.reload();
+            //}
         }
     }, 10);
 }

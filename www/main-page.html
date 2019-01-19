@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Catch-the-Egg</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<style>
+    body, html {
+        height: 100%;
+        background-image: url("b2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        user-select: none;
+        /*overflow-x: hidden;*/
+        /*overflow-y: hidden;*/
+        /*background: linear-gradient(90deg, #2196F3, #3F51B5);*/
+    }
+
+    #wrapper {
+        position: absolute;
+        left: 345px;
+        top: 800px;
+    }
+
+    .waves-effect {
+        width: 150px;
+        height: 70px;
+        padding: 0 -8px;
+        line-height: 70px;
+    }
+
+    #cancelButton {
+        background: scroll;
+        color: black
+    }
+</style>
+<body>
+<div id="wrapper">
+    <a class="waves-effect waves-light btn" id="cancelButton">Cancel</a>
+    <a class="waves-effect waves-light btn" onclick="startGame()">Start Game</a>
+</div>
+</body>
+<script>
+    function startGame() {
+        window.location.assign('index.html');
+    }
+</script>
+</html>
