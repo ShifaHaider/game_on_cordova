@@ -56,10 +56,10 @@ function simpleEgg() {
     eggImg.setAttribute('class', 'egg');
     egg1.appendChild(eggImg);
     var top = 0;
+    eggImg.style.left = left1 + 'px';
     var a = setInterval(function () {
         //console.log(eggImg.style.left);
         eggImg.style.top = top++ + 'px';
-        eggImg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
             var eggLeft = Number(eggImg.style.left.replace('px', '')) ;
             if (eggImg.style.left > basket.style.left && eggLeft < (left + 150 )) {
