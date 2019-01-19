@@ -6,6 +6,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     window.addEventListener("orientationchange", function(e){
         console.log(e);
+        console.log(e.target);
         console.log(screen.orientation.type);
     });
     //console.log(navigator.notification);
