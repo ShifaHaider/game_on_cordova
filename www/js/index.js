@@ -27,4 +27,4 @@ function onError() {
 }
 
 
-var options = { frequency: 1000 };  // Update every 3 seconds
+var options = { frequency: 1000 };
