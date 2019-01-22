@@ -10,10 +10,10 @@ var clientX;
 document.onkeydown = moveBasket;
 function moveBasket(e) {
     e = e || window.event;
-    if (e.keyCode == '37') {
+    if (e.keyCode == 37) {
         leftMove()
     }
-    else if (e.keyCode == '39') {
+    else if (e.keyCode == 39) {
         rightMove();
     }
 }
@@ -27,7 +27,6 @@ function rightMove() {
     if (left <= (document.body.clientWidth - 150)) {
         left = left + 20;
     }
-
     else {
         left = document.body.clientWidth - 150;
     }
