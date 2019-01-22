@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+    <title>Hello World</title>
+</head>
+<style>
+    #basketImg {
+        position: absolute;
+        bottom: 2px;
+        z-index: -1;
+    }
+
+    .egg {
+        position: absolute;
+    }
+
+    #score {
+        position: absolute;
+        right: 10px;
+        color: white;
+        top: 0;
+    }
+
+    body {
+        background-image: url("b2.jpg");
+        height: 100vh;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    #animatePoint {
+        position: absolute;
+        bottom: 5px;
+    }
+
+</style>
+<body>
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+<img src="egg2.png" alt="" height="40" width="30" class="waste-egg">
+
+
+<div id="animatePoint"></div>
+<div class="egg" id="egg1"></div>
+<div id="impEgg"></div>
+<div id="impEgg2"></div>
+
+<div id="basketImg">
+    <img src="basket.jpg" alt="" height="110" width="150">
+</div>
+<h2 id="score">Score : 0</h2>
+
+<script>
+    function onDeviceReady() {
+        console.log(navigator);
+        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    }
+    function onSuccess(acceleration) {
+        console.log(acceleration);
+        console.log('Acceleration X: ' + acceleration.x + '\n' +
+                'Acceleration Y: ' + acceleration.y + '\n' +
+                'Acceleration Z: ' + acceleration.z + '\n' +
+                'Timestamp: '      + acceleration.timestamp + '\n');
+    }
+    function onError() {
+        console.log('onError!');
+    }
+
+</script>
+<script type="text/javascript" src="game.js"></script>
+</body>
+</html>
