@@ -7,16 +7,32 @@ var score = 0;
 var wastEggs = 9;
 var left = 0;
 var clientX;
-document.onkeydown = moveBasket;
-function moveBasket(e) {
-    e = e || window.event;
-    if (e.keyCode == 37) {
-        leftMove()
+//document.onkeydown = moveBasket;
+document.addEventListener("deviceready", onDeviceReady, false);
+function onSuccess(acceleration) {
+    if (Math.floor(acceleration.x ) > 0) {
+        leftMove();
     }
-    else if (e.keyCode == 39) {
+    else if (Math.floor(acceleration.x) < 0) {
         rightMove();
     }
+    console.log('Acceleration X: ' +  + '\n' +
+        'Acceleration Y: ' + acceleration.y + '\n' +
+        'Acceleration Z: ' + acceleration.z + '\n' +
+        'Timestamp: '      + acceleration.timestamp + '\n');
 }
+
+function onError() {
+    alert('onError!');
+}
+
+var options = { frequency: 1000 };
+var watchID;
+function onDeviceReady() {
+    watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    console.log(watchID);
+}
+
 function leftMove() {
     if (left >= 0) {
         left = left - 20;

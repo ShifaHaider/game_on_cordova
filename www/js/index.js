@@ -25,6 +25,4 @@ function onSuccess(acceleration) {
 function onError() {
     alert('onError!');
 }
-
-
 var options = { frequency: 1000 };

@@ -10,10 +10,10 @@ var clientX;
 document.onkeydown = moveBasket;
 function moveBasket(e) {
     e = e || window.event;
-    if (e.keyCode == '37') {
+    if (e.keyCode == 37) {
         leftMove()
     }
-    else if (e.keyCode == '39') {
+    else if (e.keyCode == 39) {
         rightMove();
     }
 }
@@ -27,7 +27,6 @@ function rightMove() {
     if (left <= (document.body.clientWidth - 150)) {
         left = left + 20;
     }
-
     else {
         left = document.body.clientWidth - 150;
     }
@@ -94,9 +93,9 @@ function redEgg() {
     redEgg.setAttribute('class', 'egg');
     impDiv.appendChild(redEgg);
     var top = 0;
+    redEgg.style.left = left1 + 'px';
     var i = setInterval(function () {
         redEgg.style.top = top++ + 'px';
-        redEgg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
             var eggLeft = Number(redEgg.style.left.replace('px', ''));
             if (redEgg.style.left > basket.style.left && eggLeft < (left + 150)) {
@@ -124,10 +123,10 @@ function goldenEgg() {
     goldenEgg.style.width = '45px';
     goldenEgg.setAttribute('class', 'egg');
     impEgg2.appendChild(goldenEgg);
+    goldenEgg.style.left = left1 + 'px';
     var top = 0;
     var i = setInterval(function () {
         goldenEgg.style.top = top++ + 'px';
-        goldenEgg.style.left = left1 + 'px';
         if (top === (document.body.clientHeight - 110)) {
             var eggLeft = Number(goldenEgg.style.left.replace('px', ''));
             if (goldenEgg.style.left > basket.style.left && eggLeft < (left + 150 )) {
