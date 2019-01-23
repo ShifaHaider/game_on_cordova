@@ -26,7 +26,7 @@ function onError() {
     alert('onError!');
 }
 
-var options = { frequency: 1000 };
+var options = { frequency: 500 };
 var watchID;
 function onDeviceReady() {
     watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
@@ -85,8 +85,8 @@ function simpleEgg() {
             clearInterval(a);
             egg1.removeChild(eggImg);
             wasteEggs[wastEggs].src = 'broken-egg.png';
-            wasteEggs[wastEggs].style.height = '50px';
-            wasteEggs[wastEggs].style.width = '50px';
+            wasteEggs[wastEggs].style.height = '40px';
+            wasteEggs[wastEggs].style.width = '40px';
             wastEggs--;
             if (wastEggs === -1) {
                 alert('Game over!!');
