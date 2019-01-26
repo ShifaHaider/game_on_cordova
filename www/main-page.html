@@ -63,24 +63,6 @@
     <img src="basket.jpg" alt="" height="110" width="150">
 </div>
 <h2 id="score">Score : 0</h2>
-
-<script>
-    function onDeviceReady() {
-        console.log(navigator);
-        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-    }
-    function onSuccess(acceleration) {
-        console.log(acceleration);
-        console.log('Acceleration X: ' + acceleration.x + '\n' +
-                'Acceleration Y: ' + acceleration.y + '\n' +
-                'Acceleration Z: ' + acceleration.z + '\n' +
-                'Timestamp: '      + acceleration.timestamp + '\n');
-    }
-    function onError() {
-        console.log('onError!');
-    }
-
-</script>
 <script type="text/javascript" src="game.js"></script>
 </body>
 </html>

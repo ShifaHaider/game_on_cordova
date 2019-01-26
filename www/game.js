@@ -10,30 +10,36 @@ var clientX;
 //document.onkeydown = moveBasket;
 document.addEventListener("deviceready", onDeviceReady, false);
 function onSuccess(acceleration) {
-    if (Math.floor(acceleration.x ) > 0) {
+    if (Math.floor(acceleration.x) > 0) {
+        console.log(acceleration.x);
+        console.log('Left Moving');
         leftMove();
     }
     else if (Math.floor(acceleration.x) < 0) {
+        console.log('Right Moving');
+        console.log(acceleration.x);
+
         rightMove();
     }
-    console.log('Acceleration X: ' +  + '\n' +
+    console.log('Acceleration X: ' + +'\n' +
         'Acceleration Y: ' + acceleration.y + '\n' +
         'Acceleration Z: ' + acceleration.z + '\n' +
-        'Timestamp: '      + acceleration.timestamp + '\n');
+        'Timestamp: ' + acceleration.timestamp + '\n');
+
 }
 
 function onError() {
     alert('onError!');
 }
 
-var options = { frequency: 500 };
+var options = {frequency: 500};
 var watchID;
 function onDeviceReady() {
     watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     console.log(watchID);
 }
 
-function leftMove() {
+function leftMove(){
     if (left >= 0) {
         left = left - 20;
         basket.style.left = left + 'px';
@@ -60,30 +66,30 @@ window.addEventListener('mousemove', function (e) {
 });
 function simpleEgg() {
     var wasteEggs = document.getElementsByClassName('waste-egg');
-    var egg1 = document.getElementById('egg1');
+    var eggDiv = document.getElementById('egg1');
     var eggImg = document.createElement('img');
     var left1 = Math.floor(Math.random() * (window.screen.width - 60));
     eggImg.setAttribute('src', 'egg2.png');
     eggImg.style.height = '45px';
     eggImg.style.width = '35px';
     eggImg.setAttribute('class', 'egg');
-    egg1.appendChild(eggImg);
+    eggDiv.appendChild(eggImg);
     var top = 0;
     eggImg.style.left = left1 + 'px';
     var a = setInterval(function () {
         eggImg.style.top = top++ + 'px';
         if (top === (document.body.clientHeight - 110)) {
-            var eggLeft = Number(eggImg.style.left.replace('px', '')) ;
-            if (eggImg.style.left > basket.style.left && eggLeft < (left + 150 )) {
+            var eggLeft = Number(eggImg.style.left.replace('px', ''));
+            if (eggLeft > left && eggLeft < (left + 150 )) {
                 score = score + 10;
                 scoreDiv.innerHTML = "Score: " + score;
                 clearInterval(a);
-                egg1.removeChild(eggImg);
+                eggDiv.removeChild(eggImg);
             }
         }
         if (top === document.body.clientHeight) {
             clearInterval(a);
-            egg1.removeChild(eggImg);
+            eggDiv.removeChild(eggImg);
             wasteEggs[wastEggs].src = 'broken-egg.png';
             wasteEggs[wastEggs].style.height = '40px';
             wasteEggs[wastEggs].style.width = '40px';
@@ -114,7 +120,7 @@ function redEgg() {
         redEgg.style.top = top++ + 'px';
         if (top === (document.body.clientHeight - 110)) {
             var eggLeft = Number(redEgg.style.left.replace('px', ''));
-            if (redEgg.style.left > basket.style.left && eggLeft < (left + 150)) {
+            if (eggLeft > left && eggLeft < (left + 150)) {
                 score = score + 50;
                 scoreDiv.innerHTML = "Score: " + score;
                 clearInterval(i);
@@ -145,7 +151,7 @@ function goldenEgg() {
         goldenEgg.style.top = top++ + 'px';
         if (top === (document.body.clientHeight - 110)) {
             var eggLeft = Number(goldenEgg.style.left.replace('px', ''));
-            if (goldenEgg.style.left > basket.style.left && eggLeft < (left + 150 )) {
+            if (eggLeft > left && eggLeft < (left + 150 )) {
                 score = score + 20;
                 scoreDiv.innerHTML = "Score: " + score;
                 clearInterval(i);
@@ -161,4 +167,4 @@ function goldenEgg() {
     })
 }
 
-setInterval(goldenEgg , 9000);
+setInterval(goldenEgg, 9000);
